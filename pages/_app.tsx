@@ -1,5 +1,10 @@
 import Script from "next/script";
-import "./globals.css";
+import Layout from "../components/layout";
+
+import "moment/locale/ko";
+
+import "../styles/globals.css";
+import "../styles/react-calendar.css";
 
 declare global {
   interface Window {
@@ -15,6 +20,11 @@ export default function app({
   Component: any;
   pageProps: any;
 }) {
+  const getLayout =
+    Component.getLayout || ((page: React.ReactNode) => <Layout>{page}</Layout>);
+
+  console.log(Component.getLayout);
+
   return (
     <>
       <Script
@@ -23,7 +33,7 @@ export default function app({
         crossOrigin="anonymous"
       />
       <div className="h-screen">
-        <Component {...pageProps} />
+        {getLayout(<Component {...pageProps} />)}
         <div id="_root_portal"></div>
       </div>
     </>
