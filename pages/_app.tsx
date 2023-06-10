@@ -32,7 +32,7 @@ export default function app({
         strategy="beforeInteractive"
         crossOrigin="anonymous"
       />
-      <div className="h-screen">
+      <div>
         {getLayout(<Component {...pageProps} />)}
         <div id="_root_portal"></div>
       </div>
