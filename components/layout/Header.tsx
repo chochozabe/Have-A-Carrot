@@ -1,18 +1,8 @@
-interface IHeaderProps {
-  children: React.ReactNode;
-}
-
-export default function Header(props: IHeaderProps) {
-  const { children } = props;
-
+export default function Header() {
   return (
-    <>
-      <div className="h-20 p-5">
-        <span className="text-4xl font-semibold text-orange-500">
-          Have a Carrot 🥕
-        </span>
-      </div>
-      <div className="p-5">{children}</div>
-    </>
+    <div className="w-fit px-5 py-3 my-5 bg-orange-500 rounded-full cursor-default">
+      <span className=" text-4xl font-semibold text-white">Have a Carrot</span>
+      <span className="ml-3 text-2xl">🤍</span>
+    </div>
   );
 }

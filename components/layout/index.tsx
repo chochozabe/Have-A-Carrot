@@ -1,5 +1,6 @@
 import { usePathname } from "next/navigation";
 import Header from "./Header";
+import NavBar from "./Nav";
 
 interface ILayout {
   children: React.ReactNode;
@@ -12,7 +13,13 @@ const Layout = (props: ILayout) => {
   const currentPath = pathname?.split("/")[1];
 
   if (currentPath) {
-    return <Header>{children}</Header>;
+    return (
+      <div className="mx-5">
+        <Header />
+        <NavBar />
+        {children}
+      </div>
+    );
   } else {
     return <>{children}</>;
   }
