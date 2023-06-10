@@ -46,7 +46,7 @@ export default function Home() {
   return (
     <div
       className={
-        "w-full h-full bg-orange-500 flex flex-col justify-center items-center"
+        "w-full h-screen bg-orange-500 flex flex-col justify-center items-center"
       }
     >
       <span className="text-[45px] font-bold text-white">Have a Carrot</span>

@@ -1,3 +1,4 @@
+import { usePathname } from "next/navigation";
 import { useRouter } from "next/router";
 import { useState } from "react";
 
@@ -7,9 +8,12 @@ const NavBarList = [
 ];
 
 export default function NavBar() {
-  const [focusedItem, setFocusedItem] = useState(NavBarList[0].navItem);
-
   const router = useRouter();
+  const pathname = usePathname();
+
+  const [focusedItem, setFocusedItem] = useState(
+    NavBarList.find((nav) => nav.url === pathname)?.navItem
+  );
 
   return (
     <div className="flex gap-2 mb-5">

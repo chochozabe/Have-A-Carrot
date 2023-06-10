@@ -23,8 +23,6 @@ export default function app({
   const getLayout =
     Component.getLayout || ((page: React.ReactNode) => <Layout>{page}</Layout>);
 
-  console.log(Component.getLayout);
-
   return (
     <>
       <Script
