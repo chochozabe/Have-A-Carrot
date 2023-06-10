@@ -21,14 +21,17 @@ export default function PublicHolidays() {
 
   return (
     <>
-      <div className="mb-2 text-xl">올해의 공휴일 ✓</div>
-      <div className=" divide gap-y-3 grid grid-cols-4 border auto-rows-[40px] px-3 cursor-pointer">
+      <div className="flex items-center gap-2">
+        <div className="text-2xl">📍</div>
+        <div className="text-md mb-2 font-bold">
+          오늘 날짜 : {moment(date).format("YYYY-MM-DD dddd")}
+        </div>
+      </div>
+      <div className=" divide gap-y-3 grid grid-cols-4 border auto-rows-[40px] px-3 cursor-default">
         {holidayList &&
           holidayList.map((holiday: IHoliday) => {
             const isPast = moment(holiday.date).isBefore(date);
             const diffDay = moment(holiday.date).diff(date, "d");
-
-            console.log(isPast, holiday);
 
             return (
               <React.Fragment key={holiday.name}>
